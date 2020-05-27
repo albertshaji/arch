@@ -1,0 +1,4 @@
+#/etc/systemd/system/getty@tty1.service.d/override.conf
+[Service]
+ExecStart=
+ExecStart=-/usr/bin/agetty -n -o alby --noclear %I $TERM

@@ -1,0 +1,15 @@
+#.config/mpv/input.conf
+
+l seek  5
+h seek -5
+k seek  60
+j seek -60
+\ set speed 1.0
+- add audio-delay 0.100
+= add audio-delay -0.100
+c cycle sub
+a cycle audio
+x add sub-scale +0.1
+X add sub-scale -0.1
+p show-progress
+i show-text "${filename}"

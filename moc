@@ -1,0 +1,5 @@
+#.moc/config
+
+Theme = green_theme
+Layout1 = directory(0,0,100%,100%)
+SavePlaylist = yes

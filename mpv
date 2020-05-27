@@ -1,0 +1,6 @@
+#.mpv/mpv.conf
+
+fs=yes
+osc=no
+volume-max=300
+volume=200

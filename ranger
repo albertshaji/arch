@@ -1,0 +1,30 @@
+#.config/ranger/rc.conf
+
+# file preview
+set preview_images_method w3m
+set preview_images true
+set use_preview_script true
+map <F6> set use_preview_script!
+
+# zip/unzip
+map z shell zip -r %f %f
+map uz shell unzip %f
+
+# file navigation
+map g/ cd /
+map gh cd ~
+map ga cd ~/aud
+map gd cd ~/doc
+map go cd ~/out
+map gp cd ~/pic
+map gr cd ~/res
+map gi cd ~/ipy
+map gv cd ~/vid
+map gw cd ~/web
+map gc cd ~/.arch
+map gs cd ~/.scripts
+map gm cd /run/media/alby
+map gt cd ~/.local/share/Trash/files/
+
+# trashing
+map <DELETE> shell gio trash %s

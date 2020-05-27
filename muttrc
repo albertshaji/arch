@@ -1,0 +1,50 @@
+#.muttrc
+
+# identity
+set realname = "Albert Shaji"
+set from = "alby@disroot.org"
+
+# credentials
+set smtp_url = "smtps://alby@disroot.org@disroot.org:465"
+set smtp_pass = "`pass disroot`"
+set folder = "imaps://alby@disroot.org@disroot.org:993"
+set imap_pass = "`pass disroot`"
+
+# mailboxes
+set spoolfile = "+INBOX"
+set record = "+Sent"
+set postponed = "+Drafts"
+set trash = "+Trash"
+mailboxes =INBOX =Sent =Trash =Drafts =Junk
+
+# switch mailboxes
+bind index g noop
+macro index gi "<change-folder> =INBOX"<enter>
+macro index gs "<change-folder> =Sent"<enter>
+macro index gt "<change-folder> =Trash"<enter>
+macro index gd "<change-folder> =Drafts"<enter>
+macro index gj "<change-folder> =Junk"<enter>
+
+# viewing html
+set mailcap_path = ~/.mailcap
+auto_view text/html
+
+# fast reply
+set fast_reply = yes
+set include = yes
+
+# fast folder switch
+set sleep_time = 0
+
+# refresh frequency
+set timeout = 30
+
+# message cache
+set message_cachedir = ~/.cache/mutt/messages
+
+# email aliases
+source ~/a/emails
+set alias_file=~/a/emails
+
+# index_format
+set index_format="%3C  %Z %{%d %b %I:%M %p}  %-30.30F (%?l?%4l&%4c? %X)  %s"
