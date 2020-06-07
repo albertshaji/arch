@@ -28,8 +28,12 @@ xcape -e 'Mode_switch=Escape'
 # status & notification script
 dog.sh +
 
-# turn off wifi
-#sudo rfkill block wlan
+# turn off wifi if not connected
+{
+    sleep 30s
+    nmcli -f active dev wifi | grep -q 'yes'
+    [ $? -eq 0 ] || sudo rfkill block wlan
+} &
 
 ln -s out .out
 
