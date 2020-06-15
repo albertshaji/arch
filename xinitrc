@@ -1,7 +1,7 @@
 #.xinitrc
 
 # wallpaper
-feh -z --bg-fill ~/pic/wallpaper
+feh -z --bg-fill ~/pic/best
 
 # brightness
 xbacklight -set 7
@@ -30,11 +30,11 @@ dog.sh +
 
 # turn off wifi if not connected
 {
-    sleep 30s
-    nmcli -f active dev wifi | grep -q 'yes'
-    [ $? -eq 0 ] || sudo rfkill block wlan
+    sleep 60
+    nmcli -f active dev wifi | grep -q 'yes' ||
+    sudo rfkill block wlan
 } &
 
-ln -s out .out
+ln -s tem .tem
 
 exec dwm

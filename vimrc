@@ -12,6 +12,7 @@ set incsearch
 
 " show search matches as you type
 set hlsearch
+nnoremap <esc><esc> :nohls<cr>
 
 " ignore case in search
 set ignorecase
@@ -66,19 +67,19 @@ inoremap <expr> <tab> Tabing()
 inoremap <s-tab> <c-p>
 
 " update vimrc changes when saved
-au! BufWritePost ~/x/vimrc so ~/x/vimrc
+au! BufWritePost ~/.vimrc so ~/.vimrc
 
 " keep history even when file is closed
 set undofile
 
 " delete white-space/empty-line on save
-au BufWritePre * :%s/\s\+$//e
-au BufWritePre * :v/\_s*\S/d
+au BufWritePre * %s/\s\+$//e
+au BufWritepre * %s/\n\+\%$//e
 
 " change directory
-lcd %:p:h
+set autochdir
 
-" save and quit
+" save
 imap <F2> <esc>:w<cr>
 nmap <F2> :w<cr>
 
@@ -120,10 +121,23 @@ set statusline+=\ %p%%
 au InsertEnter * hi StatusLine ctermfg=green
 au InsertLeave * hi StatusLine ctermfg=gray
 
-" compilation/execution script
-so ~/.vimtex/compile.vim
+" LaTeX compilation script
+au BufRead,BufNewFile *.md,*.tex so ~/.vimtex/compile.vim
 
 " retain clipboard contents upon leaving vim
 au VimLeave * call system("xclip -o -sel c|xclip -selection c")
 
 nmap F :find<space>
+
+" fast coding
+inoremap ( ()<left>
+inoremap " ""<left>
+inoremap \" "
+inoremap ` ``<left>
+inoremap [ []<left>
+inoremap \{ {}<left>
+inoremap { {<cr><cr>}<up><tab>
+
+" comment
+vnoremap # :s/^/#<cr>
+vnoremap \# :s/^#/<cr>

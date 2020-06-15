@@ -1,8 +1,8 @@
 #.config/user-dirs.dirs
 
 XDG_DOCUMENTS_DIR="$HOME/doc/"
-XDG_DOWNLOAD_DIR="$HOME/out/"
-XDG_DESKTOP_DIR="$HOME/.out/"
+XDG_DOWNLOAD_DIR="$HOME/tem/"
+XDG_DESKTOP_DIR="$HOME/.tem/"
 XDG_MUSIC_DIR="$HOME/moc/"
 XDG_PICTURES_DIR="$HOME/pic/"
 XDG_VIDEOS_DIR="$HOME/vid/"

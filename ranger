@@ -15,16 +15,16 @@ map g/ cd /
 map gh cd ~
 map ga cd ~/aud
 map gd cd ~/doc
-map go cd ~/out
+map gt cd ~/tem
 map gp cd ~/pic
 map gr cd ~/res
-map gi cd ~/ipy
+map gf cd ~/fun
 map gv cd ~/vid
 map gw cd ~/web
 map gc cd ~/.arch
 map gs cd ~/.scripts
 map gm cd /run/media/alby
-map gt cd ~/.local/share/Trash/files/
+map gT cd ~/.local/share/Trash/files
 
 # trashing
 map <DELETE> shell gio trash %s

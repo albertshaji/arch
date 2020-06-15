@@ -43,8 +43,8 @@ set timeout = 30
 set message_cachedir = ~/.cache/mutt/messages
 
 # email aliases
-source ~/a/emails
-set alias_file=~/a/emails
+source ~/doc/.emails
+set alias_file=~/doc/.emails
 
 # index_format
 set index_format="%3C  %Z %{%d %b %I:%M %p}  %-30.30F (%?l?%4l&%4c? %X)  %s"

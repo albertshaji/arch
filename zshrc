@@ -1,9 +1,10 @@
 #.zshrc
 
-PROMPT='%F{green}%n%f@%F{blue}%m%f %F{yellow}%1~%f %# '
+#PROMPT='%F{green}%n%f@%F{blue}%m%f %F{yellow}%1~%f > '
+PROMPT='%B%F{yellow}%2~ %(?.%F{green}.%F{red})>%f%b '
 
 # syntax highlighting
-source ~/.static/color-zsh/zsh-syntax-highlighting.zsh
+source ~/.aur/color-zsh/zsh-syntax-highlighting.zsh
 
 # vi-mode
 bindkey -v
@@ -33,13 +34,12 @@ alias -s {txt,md,py}=vim
 setopt autocd
 
 # programs
-alias v='vim'
-alias r='ranger'
 alias -g G="grep -i --color"
 alias diff='diff --color=auto'
 alias ydl='youtube-dl -i -o "%(title)s.%(ext)s"'
 alias -g P="--playlist-items"
 alias pdf='pdflatex -halt-on-error'
+alias trash='gio trash --empty'
 
 alias rm='gio trash'
 alias tree='gio tree'
@@ -51,7 +51,7 @@ alias ll='ls -hl'
 alias pa='sudo pacman --needed -Sy'
 alias pr='sudo pacman -Rns'
 alias pl='sudo pacman -Qeq'
-alias ps='sudo pacman -Ss'
+alias pq='sudo pacman -Ss'
 alias pu='sudo pacman -Syu'
 alias pc='yes | sudo pacman -Scc'
 alias pdb='sudo rm /var/lib/pacman/db.lck'
@@ -63,7 +63,7 @@ alias zr='vim ~/.zshrc; exec zsh'
 alias vr='vim ~/.vimrc'
 
 # diary entry
-alias alby='vim ~/a/2020'
+alias alby='vim ~/doc/diary/2020'
 
 # network
 alias wifi='nmcli -t -f active,ssid dev wifi | egrep "^yes"'
@@ -79,40 +79,26 @@ alias gua='git reset HEAD'
 alias gc='git commit -m'
 alias gca='git commit --amend -m'
 alias gl='git log --oneline'
-#alias undo='git checkout'
 alias gr='git reset --hard'
 alias grb='git rebase -i'
 alias gp='git push origin +master'
 alias gpb='git pull origin +master'
 
-# backup web-browaer's bookmarks
-alias bb='cp ~/.config/BraveSoftware/Brave-Browser/Default/Bookmarks ~/a/bmarks'
-
-alias trash='gio trash --empty'
-
 # mainm
 alias ml='printf "file %s\n" $(ls *.mp4) > list.txt'
 alias mc='ffmpeg -f concat -safe 0 -i list.txt -c copy final.mp4'
-
-# take complete ownership
-alias co='sudo chown -Rv $(whoami):wheel'
 
 # sync data to server
 alias keep='sync.sh +M'
 alias Keep='sync.sh -M'
 
--keep() {sync.sh -M mtp/Samsung\ SD\ card/ $*}
-
 # sync data back to pc
 alias save='sync.sh +C'
 alias Save='sync.sh -C'
 
--save() {sync.sh -C main: $*}
-
 # mount mtp device, like andriod phone
-alias mtp='simple-mtpfs --device 1 mtp/ || echo Failed!'
--mtp() {fusermount -u mtp/}
-
+alias mtp='simple-mtpfs --device 1 .mtp/'
+-mtp() {fusermount -u .mtp/}
 
 # torrent
 alias t='transmission-remote'
@@ -137,3 +123,6 @@ fi
 
 # markdown to html
 html() {pandoc $1 -t html5 --template t -s -o ${1%.*}.html --mathjax}
+
+cc() {gcc $1; ./a.out}
+tail -n 7 ~/doc/.words | uniq
