@@ -1,4 +1,3 @@
-linux-headers
 base-devel
 networkmanager
 ranger
