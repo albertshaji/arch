@@ -10,7 +10,7 @@ xbacklight -set 7
 touch .ct .tt
 
 # volume
-amixer set 'Master' 70%
+amixer set 'Master' 100%
 
 # vim like hjkl with capslock
 xmodmap -e "keycode 66 = Mode_switch"
@@ -26,7 +26,7 @@ xset r rate 300 50
 xcape -e 'Mode_switch=Escape'
 
 # status & notification script
-dog.sh +
+dog.sh + &
 
 # turn off wifi if not connected
 {
@@ -36,5 +36,6 @@ dog.sh +
 } &
 
 ln -s tem .tem
+redshift -P -O 5000 >/dev/null
 
-exec dwm
+exec dbus-launch dwm

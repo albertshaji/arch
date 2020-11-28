@@ -26,8 +26,8 @@ HISTFILE=~/.history
 setopt inc_append_history
 setopt hist_save_no_dups
 setopt hist_find_no_dups
-bindkey "^[[A" history-beginning-search-backward
-bindkey "^[[B" history-beginning-search-forward
+bindkey '^[[A' history-beginning-search-backward
+bindkey '^[[B' history-beginning-search-forward
 
 # skip typing cd and vim
 alias -s {txt,md,py}=vim
@@ -52,7 +52,7 @@ alias pa='sudo pacman --needed -Sy'
 alias pr='sudo pacman -Rns'
 alias pl='sudo pacman -Qeq'
 alias pq='sudo pacman -Ss'
-alias pu='sudo pacman -Syu'
+alias up='sudo pacman -Syu && aur.sh brave-bin'
 alias pc='yes | sudo pacman -Scc'
 alias pdb='sudo rm /var/lib/pacman/db.lck'
 alias mi='sudo make clean install'
@@ -63,10 +63,10 @@ alias zr='vim ~/.zshrc; exec zsh'
 alias vr='vim ~/.vimrc'
 
 # diary entry
-alias alby='vim ~/doc/diary/2020'
+alias alby='vim ~/doc/.classified/2020'
 
 # network
-alias wifi='nmcli -t -f active,ssid dev wifi | egrep "^yes"'
+alias lsw='nmcli -t -f active,ssid dev wifi'
 alias rain='curl wttr.in 2> /dev/null | head -n 7'
 alias ipp='printf "pirvate: "; hostname -i'
 alias ip='printf "public: "; curl ipinfo.io/ip'
@@ -75,14 +75,15 @@ alias ip='printf "public: "; curl ipinfo.io/ip'
 alias gd='git diff'
 alias gs="git status"
 alias ga='git add'
-alias gua='git reset HEAD'
+alias gr='git reset HEAD'
 alias gc='git commit -m'
 alias gca='git commit --amend -m'
 alias gl='git log --oneline'
-alias gr='git reset --hard'
+alias grh='git reset --hard'
+alias grs='git reset --soft'
 alias grb='git rebase -i'
 alias gp='git push origin +master'
-alias gpb='git pull origin +master'
+alias gP='git pull origin +master'
 
 # mainm
 alias ml='printf "file %s\n" $(ls *.mp4) > list.txt'
@@ -97,8 +98,8 @@ alias save='sync.sh +C'
 alias Save='sync.sh -C'
 
 # mount mtp device, like andriod phone
-alias mtp='simple-mtpfs --device 1 .mtp/'
--mtp() {fusermount -u .mtp/}
+alias mtp='simple-mtpfs --device 1 .phone/'
+-mtp() {fusermount -u .phone/}
 
 # torrent
 alias t='transmission-remote'
@@ -117,7 +118,7 @@ if pgrep -f transmission-daemon >/dev/null
 then
     transmission-remote --list
 else
-    transmission-daemon -c ~/out/
+    transmission-daemon -c ~/tem/
 fi
 }
 
@@ -125,4 +126,41 @@ fi
 html() {pandoc $1 -t html5 --template t -s -o ${1%.*}.html --mathjax}
 
 cc() {gcc $1; ./a.out}
-tail -n 7 ~/doc/.words | uniq
+
+# vocabulary
+tail -n 5 ~/doc/.words | uniq
+shuf -n1 /usr/share/dict/british-english
+
+open_with_fzf() {
+    fd -t f -H -I | fzf -m --preview="xdg-mime query default {}" | xargs -ro -d "\n" xdg-open 2>&-
+}
+cd_with_fzf() {
+    cd $HOME && cd "$(fd -t d | fzf --preview="tree -L 1 {}" --bind="space:toggle-preview" --preview-window=:hidden)"
+}
+pacs() {
+    sudo pacman -Syy $(pacman -Ssq | fzf -m --preview="pacman -Si {}" --preview-window=:hidden --bind=space:toggle-preview)
+}
+zle -N open_with_fzf
+
+bindkey '^f' open_with_fzf
+bindkey -s '^d' "cd_with_fzf\n"
+
+# Change cursor shape on vi-mode
+function zle-keymap-select {
+  if [[ ${KEYMAP} == vicmd ]] || [[ $1 = 'block' ]]
+  then
+    echo -ne "\033[1 q"
+  else
+    echo -ne "\033[4 q"
+  fi
+}
+zle -N zle-keymap-select
+
+# on new ternimal line
+_fix_cursor() { echo -ne '\e[4 q' }
+precmd_functions+=(_fix_cursor)
+
+# on entering and leaving vim
+zle-line-init() { zle -K viins; echo -ne "\033[4 q" }
+zle-line-finish() { echo -ne "\033[1 q" }
+zle -N zle-line-finish

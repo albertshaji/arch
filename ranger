@@ -23,6 +23,7 @@ map gv cd ~/vid
 map gw cd ~/web
 map gc cd ~/.arch
 map gs cd ~/.scripts
+map gM cd ~/.mtp
 map gm cd /run/media/alby
 map gT cd ~/.local/share/Trash/files
 

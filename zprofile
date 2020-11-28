@@ -2,10 +2,12 @@
 
 export EDITOR="vim"
 export TERMINAL="st"
-export BROWSER="brave"
+export BROWSER="brave --enable-low-end-device-mode"
 export READER="zathura"
 export FILE="ranger"
 export PATH="$PATH:/home/alby/.scripts"
+export M=".phone/Samsung SD card"
+export N="doc/notes"
 
 export LESS=-R
 export LESS_TERMCAP_mb=$'\E[1;31m'
