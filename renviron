@@ -1,4 +1,4 @@
-#/etc/R/Renviron
+# /etc/R/Renviron r
 
 ### etc/Renviron.  Generated from Renviron.in by configure.
 ###
@@ -50,7 +50,7 @@ R_SYSTEM_ABI='linux,gcc,gxx,gfortran,gfortran'
 R_STRIP_SHARED_LIB=${R_STRIP_SHARED_LIB-'strip --strip-unneeded'}
 R_STRIP_STATIC_LIB=${R_STRIP_STATIC_LIB-'strip --strip-debug'}
 
-R_LIBS_USER=${R_LIBS_USER-'~/fun/.rlibs'}
+R_LIBS_USER=${R_LIBS_USER-'~/.aur/.rlibs'}
 #R_LIBS_USER=${R_LIBS_USER-'~/Library/R/4.0/library'}
 
 ### Local Variables: ***

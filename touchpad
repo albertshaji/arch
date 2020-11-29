@@ -1,4 +1,4 @@
-#/usr/share/X11/xorg.conf.d/30-touchpad.conf
+# /usr/share/X11/xorg.conf.d/30-touchpad.conf xorg-server
 
 Section "InputClass"
 	    Identifier "touchpad"

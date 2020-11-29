@@ -1,4 +1,4 @@
-#.mpv/mpv.conf
+# .mpv/mpv.conf mpv
 
 fs=yes
 osc=no

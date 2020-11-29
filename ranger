@@ -1,4 +1,4 @@
-#.config/ranger/rc.conf
+# .config/ranger/rc.conf ranger
 
 # file preview
 set preview_images_method w3m

@@ -1,4 +1,4 @@
-".vimrc
+" .vimrc gvim
 
 filetype plugin on
 set nu rnu
@@ -111,7 +111,7 @@ hi SpellBad cterm=bold ctermbg=darkRed ctermfg=White
 " au InsertLeave * hi StatusLine ctermfg=gray
 
 " LaTeX compilation script
-au BufRead,BufNewFile *.md,*.tex so ~/.vimtex/compile.vim
+au BufRead,BufNewFile *.md,*.tex so ~/code/VimTex/compile.vim
 
 " retain clipboard contents upon leaving vim
 au VimLeave * call system("xclip -o -sel c|xclip -selection c")

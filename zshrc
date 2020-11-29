@@ -1,4 +1,4 @@
-#.zshrc
+# .zshrc zsh
 
 #PROMPT='%F{green}%n%f@%F{blue}%m%f %F{yellow}%1~%f > '
 PROMPT='%B%F{yellow}%2~ %(?.%F{green}.%F{red})>%f%b '
@@ -98,8 +98,8 @@ alias save='sync.sh +C'
 alias Save='sync.sh -C'
 
 # mount mtp device, like andriod phone
-alias mtp='simple-mtpfs --device 1 .phone/'
--mtp() {fusermount -u .phone/}
+# alias mtp='simple-mtpfs --device 1 .phone/'
+# -mtp() {fusermount -u .phone/}
 
 # torrent
 alias t='transmission-remote'
@@ -128,7 +128,7 @@ html() {pandoc $1 -t html5 --template t -s -o ${1%.*}.html --mathjax}
 cc() {gcc $1; ./a.out}
 
 # vocabulary
-tail -n 5 ~/doc/.words | uniq
+tail -n 5 $WORDS | uniq
 shuf -n1 /usr/share/dict/british-english
 
 open_with_fzf() {

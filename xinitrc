@@ -1,4 +1,4 @@
-#.xinitrc
+# .xinitrc xorg-xinit
 
 # wallpaper
 feh -z --bg-fill ~/pic/best
@@ -35,7 +35,7 @@ dog.sh + &
     sudo rfkill block wlan
 } &
 
-ln -s tem .tem
+ln -s dl .dl
 redshift -P -O 5000 >/dev/null
 
 exec dbus-launch dwm

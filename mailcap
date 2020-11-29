@@ -1,2 +1,2 @@
-#.mailcap
+# .mailcap  neomutt
 text/html; w3m -I %{charset} -T text/html; copiousoutput;

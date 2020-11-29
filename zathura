@@ -1,4 +1,4 @@
-#.config/zathura/zathurarc
+# .config/zathura/zathurarc zathura
 
 unmap f
 map f toggle_fullscreen
