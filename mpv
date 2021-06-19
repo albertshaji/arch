@@ -1,6 +1,7 @@
-# .mpv/mpv.conf mpv
+# ~/.config/mpv/mpv.conf mpv
 
 fs=yes
-osc=no
+#osc=no
 volume-max=300
 volume=200
+video-unscaled=downscale-big

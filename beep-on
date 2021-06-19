@@ -1,0 +1,2 @@
+# /usr/lib/udev/rules.d/70-pcspkr-beep.rules systemd   
+ACTION=="add", SUBSYSTEM=="input", ATTRS{name}=="PC Speaker", ENV{DEVNAME}!="", TAG+="uaccess"

@@ -1,13 +1,13 @@
-# .zprofile zsh
+# ~/.zprofile zsh
 
 export EDITOR="vim"
 export TERMINAL="st"
 export BROWSER="brave --enable-low-end-device-mode"
 export READER="zathura"
 export FILE="ranger"
-export PATH="$PATH:$HOME/code/LinuxScripts"
+export PATH="$PATH:$HOME/code/script"
 export TEMPLATE="$HOME/code/VimTex/template.latex"
-export WORDS="$HOME/doc/.words"
+export SDCV_HISTFILE="$HOME/doc/NewWords"
 
 export LESS=-R
 export LESS_TERMCAP_mb=$'\E[1;31m'

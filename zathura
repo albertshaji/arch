@@ -1,43 +1,19 @@
-# .config/zathura/zathurarc zathura
+# ~/.config/zathura/zathurarc zathura
 
-unmap f
-map f toggle_fullscreen
-map = zoom "in"
-map i recolor
-
-map [fullscreen] f toggle_fullscreen
-map [fullscreen] = zoom "in"
-map [fullscreen] i recolor
-
-set adjust-open "width"
+set adjust-open "best-fit"
+set font "terminus 10"
 set selection-clipboard clipboard
 set show-scrollbars true
-set font 'Source code pro 10'
 
-#set recolor "true"
-set completion-bg           "#073642"
-set completion-fg           "#93a1a1"
-set completion-group-bg     "#002b36"
-set completion-group-fg     "#839496"
-set completion-highlight-bg "#586e75"
-set completion-highlight-fg "#eee8d5"
-
-set index-bg                "#073642"
-set index-fg                "#93a1a1"
-set index-active-bg         "#586e75"
-set index-active-fg         "#eee8d5"
-
-set inputbar-bg             "#586e75"
-set inputbar-fg             "#eee8d5"
-
-set statusbar-bg            "#073642"
-set statusbar-fg            "#93a1a1"
-
-set highlight-color         "#657b83"
-set highlight-active-color  "#268bd2"
-
-set default-bg              "#073642"
-set default-fg              "#93a1a1"
-
-set recolor-lightcolor      "#073642"
-set recolor-darkcolor       "#93a1a1"
+set default-bg         "#222222"
+set default-fg         "#bbbbbb"
+set recolor-lightcolor "#222222"
+set recolor-darkcolor  "#bbbbbb"
+set statusbar-bg       "#222222"
+set statusbar-fg       "#bbbbbb"
+set index-bg           "#222222"
+set index-fg           "#bbbbbb"
+set inputbar-bg        "#222222"
+set inputbar-fg        "#bbbbbb"
+set completion-bg      "#222222"
+set completion-fg      "#bbbbbb"

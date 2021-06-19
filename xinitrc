@@ -1,16 +1,10 @@
-# .xinitrc xorg-xinit
+# ~/.xinitrc xorg-xinit
 
-# wallpaper
-feh -z --bg-fill ~/pic/best
-
-# brightness
+nitrogen --set-zoom-fill $HOME/pic/.wallpaper
 xbacklight -set 7
-
-# toggle
-touch .ct .tt
-
-# volume
 amixer set 'Master' 100%
+redshift -P -O 5000 >/dev/null
+xrdb .Xresources
 
 # vim like hjkl with capslock
 xmodmap -e "keycode 66 = Mode_switch"
@@ -22,20 +16,18 @@ xmodmap -e "keysym j = j J Down"
 xset m 4 0
 xset r rate 300 50
 
-# double capslock as escape
-xcape -e 'Mode_switch=Escape'
-
 # status & notification script
-dog.sh + &
+status
+battery
+weather
 
-# turn off wifi if not connected
+# turn off wifi if inactive
 {
-    sleep 60
+    sleep 120
     nmcli -f active dev wifi | grep -q 'yes' ||
     sudo rfkill block wlan
 } &
 
-ln -s dl .dl
-redshift -P -O 5000 >/dev/null
-
+sxhkd &
+xautolock -time 10 -locker slock &
 exec dbus-launch dwm

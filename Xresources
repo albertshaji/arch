@@ -1,0 +1,9 @@
+! ~/.Xresources xorg-xrdb
+
+*.font: terminus:size=10
+*.foreground: #222222
+*.background: #bbbbbb
+
+dzen2.font: terminus:size=10:style=bold
+!dzen2.foreground: #ff0000
+!dzen2.background: #222222

@@ -1,4 +1,4 @@
-# .muttrc neomutt
+# ~/.muttrc neomutt
 
 # identity
 set realname = "Albert Shaji"
@@ -6,9 +6,9 @@ set from = "alby@disroot.org"
 
 # credentials
 set smtp_url = "smtps://alby@disroot.org@disroot.org:465"
-set smtp_pass = "`pass disroot`"
+set smtp_pass = "`pass disroot/passwd`"
 set folder = "imaps://alby@disroot.org@disroot.org:993"
-set imap_pass = "`pass disroot`"
+set imap_pass = "`pass disroot/passwd`"
 
 # mailboxes
 set spoolfile = "+INBOX"
@@ -43,8 +43,8 @@ set timeout = 30
 set message_cachedir = ~/.cache/mutt/messages
 
 # email aliases
-source ~/doc/.emails
-set alias_file=~/doc/.emails
+source ~/doc/.email
+set alias_file=~/doc/EmailContacts
 
 # index_format
 set index_format="%3C  %Z %{%d %b %I:%M %p}  %-30.30F (%?l?%4l&%4c? %X)  %s"
