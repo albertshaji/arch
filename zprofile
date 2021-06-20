@@ -1,4 +1,4 @@
-# ~/.zprofile zsh
+# .zprofile zsh
 
 export EDITOR="vim"
 export TERMINAL="st"

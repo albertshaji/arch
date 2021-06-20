@@ -1,4 +1,4 @@
-# ~/.zshrc zsh
+# .zshrc zsh
 
 PROMPT='%F{yellow}%2~ %B%(?.%F{green}.%F{red})>%f%b '
 

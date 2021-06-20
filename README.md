@@ -1,1 +1,1 @@
-Dot-files for my Arch Linux programs on a ThinkPad x220.
+Dot-files for my Arch Linux programs running on ThinkPad x220.

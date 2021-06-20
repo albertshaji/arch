@@ -1,4 +1,4 @@
-# ~/.config/user-dirs.dirs
+# .config/user-dirs.dirs
 
 XDG_DOCUMENTS_DIR="$HOME/doc/"
 XDG_DOWNLOAD_DIR="$HOME/dl/"

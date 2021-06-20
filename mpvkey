@@ -1,4 +1,4 @@
-# ~/.config/mpv/input.conf mpv
+# .config/mpv/input.conf mpv
 
 l seek  5
 h seek -5

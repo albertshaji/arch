@@ -1,4 +1,4 @@
-" ~/.vimrc gvim
+" .vimrc gvim
 
 filetype plugin on
 
@@ -25,7 +25,7 @@ set virtualedit=all
 " mouse Scroll up/dowm
 map <ScrollWheelUp> <c-y>
 
-" telling vim not act like vi
+" vim, don't act like vi
 set nocompatible
 
 " show :<tab> completion matches

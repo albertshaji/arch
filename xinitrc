@@ -1,4 +1,4 @@
-# ~/.xinitrc xorg-xinit
+# .xinitrc xorg-xinit
 
 nitrogen --set-zoom-fill $HOME/pic/.wallpaper
 xbacklight -set 7

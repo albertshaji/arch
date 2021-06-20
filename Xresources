@@ -1,4 +1,4 @@
-! ~/.Xresources xorg-xrdb
+! .Xresources xorg-xrdb
 
 *.font: terminus:size=10
 *.foreground: #222222

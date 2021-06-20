@@ -1,4 +1,4 @@
-# ~/.config/sxhkd/sxhkdrc sxhkd
+# .config/sxhkd/sxhkdrc sxhkd
 
 super + w
     brave --enable-low-end-device-mode

@@ -1,4 +1,4 @@
-# ~/.config/zathura/zathurarc zathura
+# .config/zathura/zathurarc zathura
 
 set adjust-open "best-fit"
 set font "terminus 10"
