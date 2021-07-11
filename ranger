@@ -7,6 +7,7 @@ map <F6> set use_preview_script!
 
 map z shell zip -r %f %f
 map uz shell unzip %f
+map ur unrar e %f
 
 map g/ cd /
 map gh cd ~

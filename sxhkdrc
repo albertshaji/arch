@@ -12,7 +12,7 @@ super + e
 super + shift + d
     sdcvmenu
 
-super + Print
+super + shift + f
     flameshot gui
 
 Print
