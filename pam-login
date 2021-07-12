@@ -1,6 +1,5 @@
 # /etc/pam.d/system-local-login fprintd
 
-auth 	 sufficient pam_fprintd.so
 auth      include   system-login
 account   include   system-login
 password  include   system-login

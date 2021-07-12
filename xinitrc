@@ -19,7 +19,7 @@ xmodmap -e "keysym k = k K Up"
 xmodmap -e "keysym j = j J Down"
 
 # mouse acceleration
-xset m 1/8 0
+xset m 4 0
 
 # keyboard repeat dely and rate
 xset r rate 300 50

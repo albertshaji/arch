@@ -26,7 +26,8 @@ bindkey '^[[A' history-beginning-search-backward
 bindkey '^[[B' history-beginning-search-forward
 
 # skip typing vim
-alias -s {txt,md,py}=vim
+alias -s {txt,md,py}=nvim
+alias vim=nvim
 
 # skip typing cd
 setopt autocd
