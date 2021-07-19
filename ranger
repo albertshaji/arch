@@ -18,10 +18,10 @@ map gp cd ~/pic
 map gc cd ~/code
 map gv cd ~/vid
 map gP cd ~/phone
-map gm cd /run/media/alby
+map gm cd /run/media/
 map gt cd ~/.local/share/Trash/files
 
 map <DELETE> shell gio trash %s
 
-map t shell echo %p >>~/rangerlist.txt
-map T shell echo %p >~/rangerlist.txt
+map t shell echo %p >>~/tlist.txt
+map T shell echo %p >~/tlist.txt

@@ -1,11 +1,8 @@
-# /usr/share/X11/xorg.conf.d/30-touchpad.conf xorg-server
+# /etc/X11/xorg.conf.d/30-touchpad.conf libinput
 
 Section "InputClass"
-	    Identifier "touchpad"
-	    Driver "libinput"
-	    Option "NaturalScrolling" "true"
-	    Option "ScrollMethod" "two-finger"
+	Identifier "touchpad"
+	Driver "libinput"
         Option "Tapping" "true"
         Option "TappingDrag" "true"
-        Option "TappingDragLock" "true"
 EndSection

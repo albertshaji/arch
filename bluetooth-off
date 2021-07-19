@@ -1,2 +1,2 @@
-# /etc/udev/rules.d/50-bluetooth.rules systemd 
+# /etc/udev/rules.d/50-bluetooth.rules systemd
 SUBSYSTEM=="rfkill", ATTR{type}=="bluetooth", ATTR{state}="0"

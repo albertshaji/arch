@@ -16,11 +16,6 @@ map <ScrollWheelUp> <c-y>
 " vim, don't act like vi
 set nocompatible
 
-" indention
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
 
 " dictionary words tab-complete
 set dictionary+=/usr/share/dict/british-english

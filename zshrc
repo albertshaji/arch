@@ -45,7 +45,7 @@ alias -g tor=transmission-remote
 alias -g tord=transmission-daemon
 alias pacman-unlock='sudo rm /var/lib/pacman/db.lck'
 alias mci='sudo make clean install'
-alias journal='vim ~/doc/.classified/2021'
+alias journal='vim ~/doc/Journal/2021.txt'
 alias lastword='tail -n 10 ~/doc/.word | uniq'
 
 
